@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 
+// https://mycodings.fly.dev/blog/2024-01-13-nextjs-14-tutorial-1-all-about-routing
 export default function Home() {
   return (
     <main className={styles.main}>
