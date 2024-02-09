@@ -18,6 +18,17 @@
   font-family: var(--font-mono);
 }
 
+.korean_basic {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: var(--max-width);
+  /* width: 100%; */
+  z-index: 2;
+  font-family: var(--font-korean-basic);
+}
+
 .description a {
   display: flex;
   justify-content: center;
@@ -210,15 +221,19 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .vercelLogo {
+    filter: invert(1);
+  }  
+  
+  .angukLogo {
     filter: invert(1);
   }
 
   .logo {
     filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
-}
+} */
 
 @keyframes rotate {
   from {
