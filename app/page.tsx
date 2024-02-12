@@ -22,6 +22,7 @@ export default function Home() {
   setTimeout(()=>{
     setMoving(true);
   })
+  // for small viewport like mobile 
   setTimeout(()=>{
     ref?.current?.scrollIntoView({
       inline: "nearest", //-수평 요소에 대한 옵션
@@ -42,13 +43,11 @@ export default function Home() {
       {/* <Background /> */}
       <main 
         className={styles.main}
-        // style={{position: 'fixed', top:'0px', left: '0px', zIndex:'2',}}
       >
         <div className={styles.description}>
           <div>
             &nbsp;
             <span
-              // className={hiMelody.className}
               style={{fontSize:'1rem',}}
             >
               2001 ESTD.
@@ -101,8 +100,6 @@ export default function Home() {
             // href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             // href="http://localhost:3000/about"
             className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={()=>router.push('/about')}
             style={{textAlign:'center', cursor: 'pointer'}}
           >
@@ -112,14 +109,11 @@ export default function Home() {
               소개 
               {/* <span>-&gt;</span> */}
             </h4>
-            {/* <p>Find in-depth information about Next.js features and API.</p> */}
           </a>
 
           <a
             // href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={()=>router.push('/members')}
             style={{textAlign:'center', cursor: 'pointer'}}
           >
@@ -129,14 +123,11 @@ export default function Home() {
               구성원 
               {/* <span>-&gt;</span> */}
             </h4>
-            {/* <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p> */}
           </a>
 
           <a
             // href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={()=>router.push('/areas')}
             style={{textAlign:'center', cursor: 'pointer'}}
           >
@@ -146,14 +137,11 @@ export default function Home() {
               업무분야 
               {/* <span>-&gt;</span> */}
             </h4>
-            {/* <p>Explore starter templates for Next.js.</p> */}
           </a>
 
           <a
             // href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={()=>router.push('/contact')}
             style={{textAlign:'center', cursor: 'pointer'}}
             ref={ref}
@@ -164,9 +152,6 @@ export default function Home() {
               오시는 길 
               {/* <span>-&gt;</span> */}
             </h4>
-            {/* <p>
-              Instantly deploy your Next.js site to a shareable URL with Vercel.
-            </p> */}
           </a>
         </div>
       </main>

@@ -109,3 +109,7 @@ a {
     color-scheme: light;
   }
 }
+
+.about-wrapper > div > div {
+  min-height: 100dvh;
+}
