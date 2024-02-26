@@ -1,10 +1,11 @@
 'use client';
 
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+
 import styles from "./page.module.css";
 import { Hi_Melody } from 'next/font/google'; 
-import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
 // import Background from "@/components/Background";
 
 /**적용하고자 하는 font*/
@@ -19,26 +20,24 @@ export default function Home() {
   const router=useRouter();
   const ref = useRef<any>(null);
   const [moving, setMoving]=useState(false);
-  setTimeout(()=>{
-    setMoving(true);
-  })
-  // for small viewport like mobile 
-  setTimeout(()=>{
-    ref?.current?.scrollIntoView({
-      inline: "nearest", //-수평 요소에 대한 옵션
-      behavior: "smooth" // -스크롤 시 smooth한 효과를 주고 싶을 때});
+  useEffect(() => {
+
+    setTimeout(()=>{
+      setMoving(true);
     });
-  }, 6500)
+    // for small viewport like mobile 
+    setTimeout(()=>{
+      ref?.current?.scrollIntoView({
+        inline: "nearest", //-수평 요소에 대한 옵션
+        behavior: "smooth" // -스크롤 시 smooth한 효과를 주고 싶을 때});
+      });
+    }, 6500);
+
+  });
   
   return (
     <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        width: '100dvw',
-        height: '100dvh',
-      }}
+      className={styles.wrapper}
     >  
       {/* <Background /> */}
       <main 
@@ -48,19 +47,17 @@ export default function Home() {
           <div>
             &nbsp;
             <span
-              style={{fontSize:'1rem',}}
+              className={styles.uppersides}
             >
               2001 ESTD.
             </span>
           </div>
           <div>
-          {/* <p> */}
             <a
               href="https://penvot.com/desk/ce7c148fb51a082809cd2508e4d8ec910ae14d9f1e9b652f75ca8cd3dcf4585e"
               target="_blank"
               rel="noopener noreferrer"
-              className={hiMelody.className}
-              style={{fontSize:'1rem',}}
+              className={`${hiMelody.className} ${styles.uppersides}`}
             >
               변호사 정희찬의 서재 방문{" "}
               <Image
@@ -73,17 +70,10 @@ export default function Home() {
               />
             </a>
           </div>
-          {/* </p> */}
         </div>
 
         <div 
-          className={styles.center}
-          style={{
-            transform: `${moving?'translateY(-80px)':'none'}`,
-            transition: 'normal 3s linear 0.5s',
-            position: 'sticky',
-            top: '0px'
-          }}
+          className={`${moving?styles.center_moving:styles.center_not_moving}`}
         >
           <Image
             className={styles.logo}
@@ -97,14 +87,11 @@ export default function Home() {
 
         <div className={styles.grid}>
           <a
-            // href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            // href="http://localhost:3000/about"
             className={styles.card}
             onClick={()=>router.push('/about')}
-            style={{textAlign:'center', cursor: 'pointer'}}
           >
             <h4
-              style={{opacity:0.5}}
+              className={styles.half_opacity}
             >
               소개 
               {/* <span>-&gt;</span> */}
@@ -112,13 +99,11 @@ export default function Home() {
           </a>
 
           <a
-            // href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
             onClick={()=>router.push('/members')}
-            style={{textAlign:'center', cursor: 'pointer'}}
           >
             <h4
-              style={{opacity:0.5}}
+              className={styles.half_opacity}
             >
               구성원 
               {/* <span>-&gt;</span> */}
@@ -126,13 +111,11 @@ export default function Home() {
           </a>
 
           <a
-            // href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
             onClick={()=>router.push('/areas')}
-            style={{textAlign:'center', cursor: 'pointer'}}
           >
             <h4
-              style={{opacity:0.5}}
+              className={styles.half_opacity}
             >
               업무분야 
               {/* <span>-&gt;</span> */}
@@ -140,14 +123,12 @@ export default function Home() {
           </a>
 
           <a
-            // href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
             onClick={()=>router.push('/contact')}
-            style={{textAlign:'center', cursor: 'pointer'}}
             ref={ref}
           >
             <h4
-              style={{opacity:0.5}}
+              className={styles.half_opacity}
             >
               오시는 길 
               {/* <span>-&gt;</span> */}

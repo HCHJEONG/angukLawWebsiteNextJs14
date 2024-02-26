@@ -110,6 +110,20 @@ a {
   }
 }
 
-.about-wrapper > div > div {
-  min-height: 100dvh;
+/* 프린터 출력 */
+#printed_wrapper {
+  width: 0px;
+  height: 0px;
+  overflow: auto;
+} 
+
+@media print {
+  #root{
+    display: none;
+  }
+  #printed_wrapper{
+    width: auto;
+    height: auto;
+    overflow: hidden;
+  }
 }
