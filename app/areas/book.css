@@ -1,8 +1,9 @@
 .pagedjs_page {
     background: white;
-    /* box-shadow: 10px 12px 30px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 12px 30px 0 rgba(0, 0, 0, 0.1);
     margin: 1rem; 
-    @page {
+    border: 1px solid green;
+    /* @page {
       size: A4;
       @bottom-right {
         content: counter(page);

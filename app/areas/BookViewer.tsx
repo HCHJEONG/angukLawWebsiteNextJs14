@@ -2,22 +2,25 @@ import { useLayoutEffect } from "react";
 // import { Previewer } from "pagedjs";
 import { Previewer, Chunker } from "../../utils/paged-penvot";
 
-const BookViewer = () => {
+const BookViewer = ({pagedjsdocrootref, ebookreaderref}:any) => {
   
   useLayoutEffect(() => {
-    // if (
-    //   !document 
-    //   || 
-    //   !(document!.querySelector("#pagedjsdocroot")) 
-    //   || 
-    //   !(document.querySelector("#ebookreader"))
-    // ) {
-    //   return;
-    // }
+    console.log(pagedjsdocrootref);
+    console.log(ebookreaderref);
+    if (
+      // !document 
+      // || 
+      !pagedjsdocrootref.current// !(document!.querySelector("#pagedjsdocroot")) 
+      || 
+      !ebookreaderref.current // !(document.querySelector("#ebookreader"))
+    ) {
+      return;
+    }
     const previewer = new Previewer();
     previewer
       .preview(
-        document!.querySelector("#pagedjsdocroot")!.innerHTML,
+        // document!.querySelector("#pagedjsdocroot")!.innerHTML,
+        pagedjsdocrootref.current.innerHTML,
         [
           {_: 
             `
@@ -59,7 +62,8 @@ const BookViewer = () => {
             `  
           }
         ],      
-        document.querySelector("#ebookreader")
+        // document.querySelector("#ebookreader")
+        ebookreaderref.current
       )
       .then((flow) => {
         console.log("ebookreader rendered, total pages", flow.total, { flow });
@@ -75,7 +79,7 @@ const BookViewer = () => {
         .forEach((e) => e.parentNode?.removeChild(e));
     };
 
-  }, []);
+  }, [ebookreaderref, pagedjsdocrootref]);
 
   // return <div></div>;
   return null;

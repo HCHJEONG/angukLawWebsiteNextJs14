@@ -2,4 +2,10 @@
     width: 100%;
     min-height: 100dvh;
     background-color: ivory;
+    display: flex;
+    justify-content: center;
+}
+.ebook_reader {
+    display: flex;
+    justify-content: center;
 }
