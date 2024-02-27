@@ -5,11 +5,19 @@ import { Previewer, Chunker } from "../../utils/paged-penvot";
 const BookViewer = () => {
   
   useLayoutEffect(() => {
-    
+    // if (
+    //   !document 
+    //   || 
+    //   !(document!.querySelector("#pagedjsdocroot")) 
+    //   || 
+    //   !(document.querySelector("#ebookreader"))
+    // ) {
+    //   return;
+    // }
     const previewer = new Previewer();
     previewer
       .preview(
-        document.querySelector("#pagedjsdocroot").innerHTML,
+        document!.querySelector("#pagedjsdocroot")!.innerHTML,
         [
           {_: 
             `
@@ -56,8 +64,8 @@ const BookViewer = () => {
       .then((flow) => {
         console.log("ebookreader rendered, total pages", flow.total, { flow });
         if (document.querySelectorAll(".pagedjs_pages").length > 1){
-          document.querySelector(".pagedjs_pages").innerHTML='';
-          document.querySelector(".pagedjs_pages").remove();
+          document!.querySelector(".pagedjs_pages")!.innerHTML='';
+          document!.querySelector(".pagedjs_pages")!.remove();
         }
       });
 

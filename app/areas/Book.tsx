@@ -4,19 +4,28 @@ import React from "react";
 import "./book.css";
 
 const Book = () => {
-  const ref = React.useRef(null);
-  React.useEffect(()=>{
-
+  const ref = React.useRef<HTMLDivElement>(null);
+  // 동기적으로 작동 (useEffect는 비동기적)
+  // 이거랑 useRef랑 무슨 연관이 있을까요? useRef는 DOM을 조작하는데 쓰입니다.
+  // 애니메이션을 추가하기도 하고 css 스타일을 얹기도 하고 
+  // 자바스크립트 함수를 통해 focus와 같은 내장 메소드를 사용하거나 
+  // 또는 이벤트 리스너를 추가할 수도 있죠.
+  // useLayoutEffect는 변화된 DOM을 브라우저가 렌더할때 
+  // 동기적으로 변화가 완료된 DOM을 보여주게 됩니다. 
+  // 즉 직접적으로 DOM 자체를 조작할 때 사용할 수 있도록 
+  // 최적화(Optimization)되어 있는 Hook이라고 할 수 있습니다.
+  React.useLayoutEffect(()=>{
+    if (!ref.current) return;
     const footnotescripts = ref.current.querySelectorAll('.EditorTheme__footnotescript');
     if (footnotescripts) {
       let footnotescriptnumber = 0;
-      for (let y of footnotescripts){
-        if (y) {
+      for (let i=0; i < footnotescripts.length; i++){
+        if (footnotescripts[i]) {
           footnotescriptnumber = footnotescriptnumber + 1;
-          let dataContent = y.getAttribute("data-content");
+          let dataContent = footnotescripts[i].getAttribute("data-content");
           if (dataContent) {
-            y.innerHTML = '';
-            y.innerHTML = footnotescriptnumber.toString() + ") " + dataContent;
+            footnotescripts[i].innerHTML = '';
+            footnotescripts[i].innerHTML = footnotescriptnumber.toString() + ") " + dataContent;
           }
         }
       }
@@ -24,10 +33,10 @@ const Book = () => {
   
     const footnotes = ref.current.querySelectorAll('.EditorTheme__footnote');
     if (footnotes){
-      for (let x of footnotes){
-        if (x) {
-          x.innerHTML = '';
-          x.remove();
+      for (let j=0; j < footnotes.length; j++){
+        if (footnotes[j]) {
+          footnotes[j].innerHTML = '';
+          footnotes[j].remove();
         }
       }
     }   
