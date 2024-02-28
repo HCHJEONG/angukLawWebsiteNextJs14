@@ -19,9 +19,10 @@ export default function Areas () {
 
   const [innerHTML, setInnerHTML] = React.useState('');
   const [trigger, setTrigger] = React.useState(true);
+  const [triggerPagination, setTriggerPagination] = React.useState(true);
 
   React.useEffect(()=>{
-    if (innerHTML === '' || !pagedjsdocrootref.current) return;
+    if (!pagedjsdocrootref.current) return;
 
     console.log('footnotes processing');
 
@@ -48,7 +49,9 @@ export default function Areas () {
         }
       }
     }   
-  }, [innerHTML, pagedjsdocrootref])
+    setTriggerPagination(!triggerPagination);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [trigger, pagedjsdocrootref])
 
   return (    
     <div className={styles.areas_wrapper}>
@@ -68,7 +71,7 @@ export default function Areas () {
         </Book>
       </div>
       <div ref={ebookreaderref} className={styles.ebook_reader}></div>
-      <BookViewer trigger={trigger} pagedjsdocrootref={pagedjsdocrootref} ebookreaderref={ebookreaderref}></BookViewer>
+      <BookViewer triggerPagination={triggerPagination} pagedjsdocrootref={pagedjsdocrootref} ebookreaderref={ebookreaderref}></BookViewer>
     </div>
   )
 

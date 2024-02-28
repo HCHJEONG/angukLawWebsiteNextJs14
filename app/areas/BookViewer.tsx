@@ -2,7 +2,7 @@ import { useLayoutEffect } from "react";
 // import { Previewer } from "pagedjs";
 import { Previewer, Chunker } from "../../utils/paged-penvot";
 
-const BookViewer = ({trigger, pagedjsdocrootref, ebookreaderref}:any) => {
+const BookViewer = ({triggerPagination, pagedjsdocrootref, ebookreaderref}:any) => {
   
   useLayoutEffect(() => {
     if (
@@ -82,7 +82,7 @@ const BookViewer = ({trigger, pagedjsdocrootref, ebookreaderref}:any) => {
         .forEach((e) => e.parentNode?.removeChild(e));
     };
 
-  }, [ebookreaderref, pagedjsdocrootref, trigger]);
+  }, [ebookreaderref, pagedjsdocrootref, triggerPagination]);
 
   // return <div></div>;
   return null;
