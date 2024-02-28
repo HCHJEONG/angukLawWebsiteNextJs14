@@ -21,17 +21,6 @@ export default function Areas () {
   const [trigger, setTrigger] = React.useState(true);
 
   React.useEffect(()=>{
-    console.log(innerHTML);
-    if (innerHTML === '' || !pagedjsdocrootref.current) return;
-    const div = document?.createElement('div');
-    div.innerHTML = innerHTML;
-    pagedjsdocrootref.current.innerHTML = '';
-    pagedjsdocrootref.current.appendChild(div);
-    setTrigger(!trigger);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [innerHTML])
-
-  React.useEffect(()=>{
     if (innerHTML === '' || !pagedjsdocrootref.current) return;
 
     console.log('footnotes processing');
@@ -69,7 +58,14 @@ export default function Areas () {
           display: "none",
         }}
       >
-        <Book setInnerHTML={setInnerHTML}></Book>
+        <Book 
+          pagedjsdocrootref={pagedjsdocrootref} 
+          innerHTML={innerHTML} 
+          setInnerHTML={setInnerHTML} 
+          trigger={trigger} 
+          setTrigger={setTrigger}
+        >
+        </Book>
       </div>
       <div ref={ebookreaderref} className={styles.ebook_reader}></div>
       <BookViewer trigger={trigger} pagedjsdocrootref={pagedjsdocrootref} ebookreaderref={ebookreaderref}></BookViewer>
