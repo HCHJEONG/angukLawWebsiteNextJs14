@@ -5,10 +5,8 @@ import { Previewer, Chunker } from "../../utils/paged-penvot";
 const BookViewer = ({pagedjsdocrootref, ebookreaderref}:any) => {
   
   useLayoutEffect(() => {
-    console.log(pagedjsdocrootref);
-    console.log(ebookreaderref);
     if (
-      // !document 
+      // !document
       // || 
       !pagedjsdocrootref.current// !(document!.querySelector("#pagedjsdocroot")) 
       || 
@@ -16,6 +14,12 @@ const BookViewer = ({pagedjsdocrootref, ebookreaderref}:any) => {
     ) {
       return;
     }
+    console.log(pagedjsdocrootref);
+    console.log(ebookreaderref.current.innerHTML);
+    // if (ebookreaderref.current.children[0] && ebookreaderref.current.children[0].children[0]) {
+    //   console.log(ebookreaderref.current.children[0].attributes);
+    //   console.log(ebookreaderref.current.children[0].children[0].attributes);
+    // }
     const previewer = new Previewer();
     previewer
       .preview(
@@ -38,7 +42,6 @@ const BookViewer = ({pagedjsdocrootref, ebookreaderref}:any) => {
                     
               .EditorTheme__footnotescript {
                 float: footnote;
-                position: footnotes;
               }
     
               ::footnote-call {

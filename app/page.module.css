@@ -4,6 +4,8 @@
   justify-content: center;
   width: 100dvw;
   height: 100dvh;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .uppersides {

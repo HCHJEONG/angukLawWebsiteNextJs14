@@ -1,5 +1,5 @@
 .areas_wrapper {
-    width: 100%;
+    width: 100dvw;
     min-height: 100dvh;
     background-color: ivory;
     display: flex;
