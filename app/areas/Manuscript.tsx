@@ -1,11 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
-const Manuscript = () => {
-
+const Manuscript = ({setInnerHTML}:any) => {
+  const ref = useRef<any>(null);
+  useEffect(()=>{
+    if (ref.current) {
+      setInnerHTML(ref.current.innerHTML);
+    }
+  }, [ref, setInnerHTML])
   return (
-    <div>   
+    <div ref={ref}>   
       <div className="ContentEditable__root content-editable-in-editor" spellCheck="true" data-lexical-editor="true" role="textbox">
         <p className="EditorTheme__paragraph" >
           <span data-lexical-text="true"></span>

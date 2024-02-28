@@ -1,11 +1,3 @@
 .areas_wrapper {
-    width: 100dvw;
-    min-height: 100dvh;
-    background-color: ivory;
-    display: flex;
-    justify-content: center;
-}
-.ebook_reader {
-    display: flex;
-    justify-content: center;
+  background-color: ivory;
 }

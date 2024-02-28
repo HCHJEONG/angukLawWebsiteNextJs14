@@ -14,8 +14,53 @@ import Book from "./Book";
 
 export default function Areas () {
 
-  const pagedjsdocrootref = useRef(null);
-  const ebookreaderref = useRef(null);
+  const pagedjsdocrootref = useRef<any>(null);
+  const ebookreaderref = useRef<any>(null);
+
+  const [innerHTML, setInnerHTML] = React.useState('');
+  const [trigger, setTrigger] = React.useState(true);
+
+  React.useEffect(()=>{
+    console.log(innerHTML);
+    if (innerHTML === '' || !pagedjsdocrootref.current) return;
+    const div = document?.createElement('div');
+    div.innerHTML = innerHTML;
+    pagedjsdocrootref.current.innerHTML = '';
+    pagedjsdocrootref.current.appendChild(div);
+    setTrigger(!trigger);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [innerHTML])
+
+  React.useEffect(()=>{
+    if (innerHTML === '' || !pagedjsdocrootref.current) return;
+
+    console.log('footnotes processing');
+
+    const footnotescripts = pagedjsdocrootref.current.querySelectorAll('.EditorTheme__footnotescript');
+    if (footnotescripts) {
+      let footnotescriptnumber = 0;
+      for (let i=0; i < footnotescripts.length; i++){
+        if (footnotescripts[i]) {
+          footnotescriptnumber = footnotescriptnumber + 1;
+          let dataContent = footnotescripts[i].getAttribute("data-content");
+          if (dataContent) {
+            footnotescripts[i].innerHTML = '';
+            footnotescripts[i].innerHTML = footnotescriptnumber.toString() + ") " + dataContent;
+          }
+        }
+      }
+    }  
+    const footnotes = pagedjsdocrootref.current.querySelectorAll('.EditorTheme__footnote');
+    if (footnotes){
+      for (let j=0; j < footnotes.length; j++){
+        if (footnotes[j]) {
+          footnotes[j].innerHTML = '';
+          footnotes[j].remove();
+        }
+      }
+    }   
+  }, [innerHTML, pagedjsdocrootref])
+
   return (    
     <div className={styles.areas_wrapper}>
       <div 
@@ -24,10 +69,10 @@ export default function Areas () {
           display: "none",
         }}
       >
-        <Book></Book>
+        <Book setInnerHTML={setInnerHTML}></Book>
       </div>
       <div ref={ebookreaderref} className={styles.ebook_reader}></div>
-      <BookViewer pagedjsdocrootref={pagedjsdocrootref} ebookreaderref={ebookreaderref}></BookViewer>
+      <BookViewer trigger={trigger} pagedjsdocrootref={pagedjsdocrootref} ebookreaderref={ebookreaderref}></BookViewer>
     </div>
   )
 
