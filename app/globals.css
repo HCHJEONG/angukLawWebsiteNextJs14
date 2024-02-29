@@ -59,15 +59,7 @@ body {
   }
 }
 
-.lazy-image-wrapper img {
-  width: 200px;
-}
-
 .EditorTheme__textBold {
-  font-size: 40px;
-}
-
-.pagedjs_page {
-  background: white;
-  border: 1px solid green;
+  font-size: 20px;
+  color: red;
 }

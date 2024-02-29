@@ -16,7 +16,7 @@ const Book = ({pagedjsdocrootref, innerHTML, setInnerHTML, trigger, setTrigger}:
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [innerHTML])
   return (
-    <div> 
+    <div className="book_to_be_rendered"> 
       <Manuscript setInnerHTML={setInnerHTML}></Manuscript>
     </div>
   );

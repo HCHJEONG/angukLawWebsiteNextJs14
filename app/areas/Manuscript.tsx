@@ -39,7 +39,7 @@ const Manuscript = ({setInnerHTML}:any) => {
         <p className="EditorTheme__paragraph">
           <br/>
         </p>
-        <p className="EditorTheme__paragraph EditorTheme__ltr" dir="ltr" style={{fontSize: '50px'}}>
+        <p className="EditorTheme__paragraph EditorTheme__ltr" dir="ltr" style={{fontSize: '7px'}}>
           <span data-lexical-text="true">   이 책은 읽는 사람에게 수학 시험 문제를 금방 풀어낼 수 있는 능력을 키워주는 것을 목표로 하고 있지 않습니다. 이 책은 단지, 사칙연산</span>
           <span   data-content="선형대수학에서 말하는 선형변환(linear transformation)의 한 종류로 산수의 기본이 되는 덧셈, 뺄셈, 곱셈, 나눗셈의 4가지 연산을 말합니다. 정수는 그렇지 않지만 유리수는 물론 실수, 나아가 복소수도 사칙연산에 대하여 닫혀있습니다. 즉, 유리수를 가지고 아무리 사칙연산을 한다고 해도 그 결과는 유리수입니다. 단, 0으로 나누는 경우는 논외로 합니다." className="EditorTheme__footnotescript" data-lexical-text="true" >1 </span>
           <span data-lexical-text="true">과 일차방정식</span>
