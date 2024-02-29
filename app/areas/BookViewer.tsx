@@ -32,9 +32,9 @@ const BookViewer = ({triggerPagination, pagedjsdocrootref, ebookreaderref}:any) 
           { _:
             `
               img {
-                max-width: 80%;
+                max-width: 80% !important;
               }  
-              
+               
               .EditorTheme__textBold {
                 font-size: 40px;
               }
