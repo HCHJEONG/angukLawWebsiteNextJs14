@@ -67,66 +67,67 @@ export default function RootLayout({
         <main className={styles.main}>        
           {children}
         </main>
+        <div className={styles.grid_wrapper}>
+          <div className={styles.grid}>
+            <a
+              className={styles.card}
+              onClick={()=>router.push('/')}
+            >
+              <h4
+                className={styles.half_opacity}
+              >
+                HOME 
+                {/* <span>-&gt;</span> */}
+              </h4>
+            </a>
+            <a
+              className={styles.card}
+              onClick={()=>router.push('/about')}
+            >
+              <h4
+                className={styles.half_opacity}
+              >
+                소개 
+                {/* <span>-&gt;</span> */}
+              </h4>
+            </a>
 
-        <div className={styles.grid}>
-          <a
-            className={styles.card}
-            onClick={()=>router.push('/')}
-          >
-            <h4
-              className={styles.half_opacity}
+            <a
+              className={styles.card}
+              onClick={()=>router.push('/members')}
             >
-              HOME 
-              {/* <span>-&gt;</span> */}
-            </h4>
-          </a>
-          <a
-            className={styles.card}
-            onClick={()=>router.push('/about')}
-          >
-            <h4
-              className={styles.half_opacity}
-            >
-              소개 
-              {/* <span>-&gt;</span> */}
-            </h4>
-          </a>
+              <h4
+                className={styles.half_opacity}
+              >
+                구성원 
+                {/* <span>-&gt;</span> */}
+              </h4>
+            </a>
 
-          <a
-            className={styles.card}
-            onClick={()=>router.push('/members')}
-          >
-            <h4
-              className={styles.half_opacity}
+            <a
+              className={styles.card}
+              onClick={()=>router.push('/areas')}
             >
-              구성원 
-              {/* <span>-&gt;</span> */}
-            </h4>
-          </a>
+              <h4
+                className={styles.half_opacity}
+              >
+                업무분야 
+                {/* <span>-&gt;</span> */}
+              </h4>
+            </a>
 
-          <a
-            className={styles.card}
-            onClick={()=>router.push('/areas')}
-          >
-            <h4
-              className={styles.half_opacity}
+            <a
+              className={styles.card}
+              onClick={()=>router.push('/contact')}
             >
-              업무분야 
-              {/* <span>-&gt;</span> */}
-            </h4>
-          </a>
-
-          <a
-            className={styles.card}
-            onClick={()=>router.push('/contact')}
-          >
-            <h4
-              className={styles.half_opacity}
-            >
-              오시는 길 
-              {/* <span>-&gt;</span> */}
-            </h4>
-          </a>
+              <h4
+                className={styles.half_opacity}
+              >
+                오시는 길 
+                {/* <span>-&gt;</span> */}
+              </h4>
+            </a>
+          </div>
         </div>
   
       </body>
