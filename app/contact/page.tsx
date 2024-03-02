@@ -1,13 +1,9 @@
+import styles from './page.module.css';
+
 export default function Contact () {
     return (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'aquablue',
-        }}
-      >
-  
+      <div className={styles .fullView}>
+
       </div>
     )
   }

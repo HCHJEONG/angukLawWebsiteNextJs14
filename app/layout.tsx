@@ -35,11 +35,11 @@ export default function RootLayout({
     <html lang="ko">
       <body className={notoSansKr.className}>
 
-        <div className={styles.description}>
+        <div className={"description"}>
           <div>
             &nbsp;
             <span
-              className={styles.uppersides}
+              className={"uppersides"}
             >
               2001 ESTD.
             </span>
@@ -49,67 +49,67 @@ export default function RootLayout({
               href="https://penvot.com/desk/ce7c148fb51a082809cd2508e4d8ec910ae14d9f1e9b652f75ca8cd3dcf4585e"
               target="_blank"
               rel="noopener noreferrer"
-              className={`${hiMelody.className} ${styles.uppersides}`}
+              className={`${hiMelody.className} "uppersides"`}
             >
-              변호사 정희찬의 서재 방문{" "}
-              <Image
+              변호사 정희찬의 서재{" "}
+              {/* <Image
                 src="/penvotlogosquare.png"
                 alt="Penvot Logo"
                 className={styles.angukLogo}
                 width={25}
                 height={25}
                 priority
-              />
+              /> */}
             </a>
           </div>
         </div>
       
-        <main className={styles.main}>        
+        <main className={"main"}>        
           {children}
         </main>
-        <div className={styles.grid_wrapper}>
-          <div className={styles.grid}>
+        <div className={"grid_wrapper"}>
+          <div className={"grid"}>
             <a
-              className={styles.card}
+              className={"card"}
               onClick={()=>router.push('/')}
             >
-              <h4
-                className={styles.half_opacity}
-              >
-                HOME 
-                {/* <span>-&gt;</span> */}
-              </h4>
+              <Image
+                src="/penvotlogosquare.png"
+                alt="Penvot Logo"
+                className={styles.angukLogo}
+                width={16}
+                height={16}
+                priority
+              />
             </a>
             <a
-              className={styles.card}
+              className={"card"}
               onClick={()=>router.push('/about')}
             >
               <h4
-                className={styles.half_opacity}
+                className={"half_opacity"}
               >
                 소개 
-                {/* <span>-&gt;</span> */}
               </h4>
             </a>
 
             <a
-              className={styles.card}
+              className={"card"}
               onClick={()=>router.push('/members')}
             >
               <h4
-                className={styles.half_opacity}
+                className={"half_opacity"}
               >
                 구성원 
-                {/* <span>-&gt;</span> */}
               </h4>
             </a>
 
             <a
-              className={styles.card}
+              className={"card"}
               onClick={()=>router.push('/areas')}
             >
               <h4
-                className={styles.half_opacity}
+                className={"half_opacity"}
               >
                 업무분야 
                 {/* <span>-&gt;</span> */}
@@ -117,11 +117,11 @@ export default function RootLayout({
             </a>
 
             <a
-              className={styles.card}
+              className={"card"}
               onClick={()=>router.push('/contact')}
             >
               <h4
-                className={styles.half_opacity}
+                className={"half_opacity"}
               >
                 오시는 길 
                 {/* <span>-&gt;</span> */}
