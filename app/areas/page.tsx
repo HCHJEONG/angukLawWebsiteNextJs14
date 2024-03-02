@@ -71,6 +71,11 @@ export default function Areas () {
               "민사소송 "
             )}
           </p>
+          <p className={styles.para_wrapper}>
+            {t(
+              "형사고소 "
+            )}
+          </p>
           
           {/* <p className={`${styles.para_wrapper} ${styles.para_accent}`}>
             {t("당신을 안국법률사무소로 초대합니다. ")}
