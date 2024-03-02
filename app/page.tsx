@@ -20,7 +20,7 @@ export default function Home() {
       >
         <Image
           className={styles.logo}
-          src="/anguklawofficeslogo.png"
+          src="/assets/img/anguklawofficeslogo.png"
           alt="Anguk Law Offices Logo"
           width={280}
           height={65}

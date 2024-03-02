@@ -1,21 +1,59 @@
+'use client';
 
+import Image from 'next/image';
+import { useTranslation } from 'react-i18next';
 import styles from './page.module.css';
 
 export default function Contact () {
+  const {t}=useTranslation();
   return (
     <div className={styles.fullView}>
       <div className={styles.about_content_wrapper}>
         <div className={styles.about_content_column}>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati ratione ad ut iste maxime eligendi, soluta enim sint animi eveniet excepturi et tempore neque dolor assumenda, illum sunt vero in.
-          aperiam, facilis cupiditate officiis atque est inventore vitae, iusto veniam autem amet quae eligendi expedita dolores?
+          
+          <div className={styles.image_wrapper}>
+            <Image
+              src="/assets/img/mypleading01.png"
+              alt="Anguk Law Offices"
+              className={styles.angukLogo}
+              width={200}
+              height={250}
+              priority
+            />
+          </div>
+          <p className={styles.para_wrapper}>
+            {t("안국법률사무소는 사건 하나하나를 소중히 여깁니다. 사건에는 의뢰인의 고민과 가치가 담겨있고 안국법률사무소는 의뢰인의 고민과 가치를 소중하게 여기기 때문입니다.")}
+          </p>
         </div>
-        <div className={styles.about_content_column}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas perspiciatis nemo id fugit minima totam adipisci dolorem nostrum, iure eaque impedit ex assumenda nulla neque debitis possimus recusandae sit dolore.
-          nesciunt, sed doloremque perspiciatis iste suscipit inventore sequi perferendis fugiat nam amet error quam quibusdam nostrum?
+        <div className={styles.about_content_column}>    
+          <div className={styles.image_wrapper}>          
+            <Image
+              src="/assets/img/mydeskmonitor.jpg"
+              alt="Anguk Law Offices"
+              className={styles.angukLogo}
+              width={275}
+              height={145}
+              priority
+            />
+          </div>
+          <p className={styles.para_wrapper}>
+            {t("안국법률사무소는 사건에 대해 연구합니다. 사건에는 항상 여러 이야기가 담겨 있습니다. 사건이 잘 정돈되어야만 비로소 숨겨진 것들이 드러나고 바른 판단이 가능해집니다.")}
+          </p>
         </div>
-        <div className={styles.about_content_column}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas perspiciatis nemo id fugit minima totam adipisci dolorem nostrum, iure eaque impedit ex assumenda nulla neque debitis possimus recusandae sit dolore.
-         repudiandae reprehenderit pariatur voluptatum reiciendis expedita libero accusantium dolore, nobis, repellendus tenetur ullam natus assumenda aliquid.
+        <div className={styles.about_content_column}> 
+          <div className={styles.image_wrapper}>          
+            <Image
+              src="/assets/img/myofficebldgsunset.jpg"
+              alt="Anguk Law Offices"
+              className={styles.angukLogo}
+              width={275}
+              height={150}
+              priority
+            />
+          </div>
+          <p className={styles.para_wrapper}>
+            {t("당신을 안국법률사무소로 초대합니다. ")}
+          </p>
         </div>
       </div>
     </div>

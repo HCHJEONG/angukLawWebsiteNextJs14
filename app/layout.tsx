@@ -90,7 +90,7 @@ export default function RootLayout({
               onClick={()=>router.push('/')}
             >
               <Image
-                src="/penvotlogosquare.png"
+                src="/assets/img/penvotlogosquare.png"
                 alt="Penvot Logo"
                 className={styles.angukLogo}
                 width={16}
