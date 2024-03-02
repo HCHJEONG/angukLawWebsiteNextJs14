@@ -203,7 +203,7 @@ body::-webkit-scrollbar {
 /* Mobile */
 @media (max-width: 600px) {
 
-  .description {
+  /* .description {
     display: none;
   }
   .description {
@@ -250,7 +250,7 @@ body::-webkit-scrollbar {
       rgb(var(--background-end-rgb)) 40%
     );
     z-index: 1;
-  }
+  } */
 
   .grid {
     grid-template-columns: 1fr;
