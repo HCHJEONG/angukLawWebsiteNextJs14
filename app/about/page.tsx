@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useTranslation } from 'react-i18next';
 import styles from './page.module.css';
 
-export default function Contact () {
+export default function About () {
   const {t}=useTranslation();
   return (
     <div className={styles.fullView}>
@@ -80,15 +80,6 @@ export default function Contact () {
               +
               "의뢰인이 이해할 수 없는 사무의 처리는 마치 도움이 된다는 이유로 동의 없이 시행하는 외과수술과도 같기 때문입니다."
             )}
-          </p>
-          <p className={styles.para_wrapper}>
-            {t("")}
-          </p>
-          <p className={styles.para_wrapper}>
-            {t("")}
-          </p>
-          <p className={styles.para_wrapper}>
-            {t("")}
           </p>
         </div>
         <div className={styles.about_content_column}> 
