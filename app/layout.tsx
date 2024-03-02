@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import i18n from "@/utils/i18n";
 
 // import { Inter } from "next/font/google";
 import { Noto_Sans_KR } from 'next/font/google'; 
 import { Hi_Melody } from 'next/font/google'; 
 import "./globals.css";
 import styles from "./page.module.css";
+import { useTranslation } from "react-i18next";
+import { useEffect, useState } from "react";
 
 // const inter = Inter({ subsets: ["latin"] });
 /**적용하고자 하는 font*/
@@ -30,7 +33,20 @@ export default function RootLayout({
 }>) {
   
   const router=useRouter();
-
+  const {t}=useTranslation();
+  const [selectedI18n, setSelectedI18n]=useState('auto');
+  useEffect(() => {
+    if (selectedI18n==='ko') {
+      i18n.changeLanguage('ko_KR');      
+    } 
+    if (selectedI18n==='en') {
+      i18n.changeLanguage('en_US');
+    }
+    if (selectedI18n==='auto') {
+      i18n.changeLanguage();
+    }
+    // https://dogcoder.tistory.com/entry/Nextjs-%EB%8B%A4%EA%B5%AD%EC%96%B4i18n-%EC%84%A4%EC%A0%95-react-i18next
+  }, [selectedI18n])
   return (
     <html lang="ko">
       <body className={notoSansKr.className}>
@@ -41,7 +57,7 @@ export default function RootLayout({
             <span
               className={"uppersides"}
             >
-              2001 ESTD.
+              {t("2001 ESTD.")}
             </span>
           </div>
           <div>
@@ -51,7 +67,7 @@ export default function RootLayout({
               rel="noopener noreferrer"
               className={`${hiMelody.className} "uppersides"`}
             >
-              변호사 정희찬의 서재{" "}
+              {t("변호사 정희찬의 서재")}{" "}
               {/* <Image
                 src="/penvotlogosquare.png"
                 alt="Penvot Logo"
@@ -89,7 +105,7 @@ export default function RootLayout({
               <h4
                 className={"half_opacity"}
               >
-                소개 
+                {t("소개")}
               </h4>
             </a>
 
@@ -100,7 +116,7 @@ export default function RootLayout({
               <h4
                 className={"half_opacity"}
               >
-                구성원 
+                {t("구성원")} 
               </h4>
             </a>
 
@@ -111,7 +127,7 @@ export default function RootLayout({
               <h4
                 className={"half_opacity"}
               >
-                업무분야 
+                {t("업무분야")} 
                 {/* <span>-&gt;</span> */}
               </h4>
             </a>
@@ -123,7 +139,7 @@ export default function RootLayout({
               <h4
                 className={"half_opacity"}
               >
-                오시는 길 
+                {t("오시는 길")} 
                 {/* <span>-&gt;</span> */}
               </h4>
             </a>
