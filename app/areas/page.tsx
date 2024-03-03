@@ -147,11 +147,11 @@ export default function Areas () {
         <div className={styles.areas_content_column}> 
           <div className={styles.image_wrapper}>          
             <Image
-              src="/assets/img/myprofilepic.jpg"
+              src="/assets/img/myofficestairs.jpg"
               alt="Anguk Law Offices"
               className={styles.angukLogo}
               width={300}
-              height={400}
+              height={550}
               priority
             />
           </div>
