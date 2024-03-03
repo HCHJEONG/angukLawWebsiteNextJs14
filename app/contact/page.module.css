@@ -8,9 +8,25 @@
    justify-content: flex-start;
  }
  .map_wrapper {
+  padding: 8%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100dvw;
+  overflow-x: auto;
+ }
+ .iframe_wrapper {
+  padding: 16px;
+  width: max-content;
+  background-color: #e1e1e1;
+  margin-left: auto;
+  margin-right: auto;
+ }
+ .contact_wrapper {
   padding: 40px;
   margin-left: auto;
   margin-right: auto;
+  width: 100dvw;
+  overflow-x: auto;
  }
  .para_wrapper {
   word-break: break-all;

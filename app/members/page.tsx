@@ -23,10 +23,27 @@ export default function Members () {
           </div>
           
         </div>
-        <div className={styles.members_content_column}>    
+        <div className={styles.members_content_column}> 
+          <p className={styles.para_wrapper}>
+            {t(
+              "인도 델리대학교 법과대학 박사 졸업 (Ph.D)"
+            )}
+            <br/>
+            <span style={{fontSize: '0.8rem'}}>
+              {t("박사학위 논문 ")}
+            </span>
+            <span style={{fontSize: '0.8rem', color: 'green',}}>
+              {t("한국과 인도의 법인격 개념에 대한 비교 연구 ")}
+            </span>
+          </p>   
           <p className={styles.para_wrapper}>
             {t(
               "서울대학교 법과대학 졸업 "
+            )}
+          </p>
+          <p className={styles.para_wrapper}>
+            {t(
+              "변호사시험 출제 및 채점위원 "
             )}
           </p>
           <p className={styles.para_wrapper}>
@@ -53,18 +70,6 @@ export default function Members () {
           </p>          
           <p className={styles.para_wrapper}>
             {t(
-              "인도 델리대학교 법과대학 박사 졸업 "
-            )}
-            <br/>
-            <span style={{fontSize: '0.8rem'}}>
-              {t("박사학위 논문 ")}
-            </span>
-            <span style={{fontSize: '0.8rem', color: 'green',}}>
-              {t("한국과 인도의 법인격 개념에 대한 비교 연구 ")}
-            </span>
-          </p>
-          <p className={styles.para_wrapper}>
-            {t(
               "한국외국어대학교 법과대학 강의 "
             )}
             <br/>
@@ -75,11 +80,6 @@ export default function Members () {
             <span style={{fontSize: '0.8rem'}}>
               {t("물권법 ")}
             </span>
-          </p>
-          <p className={styles.para_wrapper}>
-            {t(
-              "변호사시험 출제 및 채점위원 "
-            )}
           </p>
           <p className={styles.para_wrapper}>
             {t(
