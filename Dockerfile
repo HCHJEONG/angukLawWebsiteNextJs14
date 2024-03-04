@@ -31,3 +31,7 @@ ENTRYPOINT node server.js
 
 
 # docker build --tag anguklaw:2024030401 .
+# docker save anguklaw:2024030403 >> ~/anguklaw2024030403.tar
+# sudo scp -i penvotkeypair1.pem ./anguklaw2024030403.tar ubuntu@3.35.49.93:/home/ubuntu/
+# sudo docker load -i /home/ubuntu/anguklaw2024030403.tar
+# sudo docker run -dit --name anguklaw -p 3000:3000 anguklaw:2024030403
