@@ -57,7 +57,7 @@ export default function RootLayout({
             <span
               className={"uppersides"}
             >
-              {t("2001 ESTD.")}
+              {t("2001 estd.")}
             </span>
           </div>
           <div>
